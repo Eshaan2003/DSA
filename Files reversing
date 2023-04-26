@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    FILE *fp1,*fp2;
+    fp1=fopen("fpr1.txt","r");
+    int n,i,b;
+    int c;
+
+     fscanf(fp1,"%d",&n);
+     printf("%d",n);
+     int a[n];
+     for(i=0;i<n;i++)
+     {
+        fscanf(fp1,"%d",&b);
+        a[i]=b;
+        printf("\n%d",a[i]);
+     }
+     printf("\nreversed array");
+
+//reversing
+
+     int r[n];
+     for(i=0;i<n;i++)
+     {
+         r[i]=a[n-i-1];
+         printf("\n%d",r[i]);
+     }
+     fclose(fp1);
+
+     fp2=fopen("fpr2.txt","w");
+     for(i=0;i<n;i++)
+     {
+ fprintf(fp2,"\n%d",r[i]);
+     }
+     fclose(fp2);
+}
